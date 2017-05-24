@@ -6,6 +6,7 @@ public class AppTestCase extends TestCase {
 
 	protected int value1, value2;
 	protected String value3, value4;
+	App ap;
 
 	// assigning the values
 	protected void setUp() {
@@ -13,6 +14,7 @@ public class AppTestCase extends TestCase {
 		value2 = 3;
 		value3 = "s";
 		value4 = "d";
+		ap = new App();
 	}
 
 	public void testAdd() {
@@ -21,7 +23,7 @@ public class AppTestCase extends TestCase {
 	}
 
 	public void testConcatenate( String value3, String value4){
-		App ap = new App();
+
 		String resultStr = ap.concatenate(value3, value4);
 		assertTrue(resultStr.equals("sd"));
 	}

@@ -8,19 +8,45 @@ import static org.junit.Assert.*;
 public class AppTest 
     {
 	
+	App app = new App();
+	
 	  @Test
 	    public void testConcatenate() {
-	        App myUnit = new App();
-	        String result = myUnit.concatenate("one", "two");
+	        String result = app.concatenate("one", "two");
 	        assertEquals("onetwo", result);
 
 	    }
 	  
 	  @Test
 	    public void testConcatenateWithNull() {
-	        App myUnit = new App();
-	        String result = myUnit.concatenate(null, "two");
+	        String result = app.concatenate(null, "two");
 	        assertEquals("two", result);
-
 	    }
+	  
+	  @Test
+	  public void testAMethod(){
+		 String result = app.amethod("10", 20);
+		 assertEquals(result, "30");
+	  }
+	  
+	  @Test
+	  public void testAMethodWithNumberFormatException(){
+		  boolean thrown = false;
+		  try {
+			   app.amethod(null, 20);
+		  } catch (NumberFormatException e) {
+		    thrown = true;
+		  }
+		  assertTrue(thrown);
+	  }
+	  @Test
+	  public void testAMethodWithNullPointerException(){
+		  boolean thrown = false;
+		  try {
+			   app.amethod("3", null);
+		  } catch (NullPointerException e) {
+		    thrown = true;
+		  }
+		  assertTrue(thrown);
+	  }
 }
