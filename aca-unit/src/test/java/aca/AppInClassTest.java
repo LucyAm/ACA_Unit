@@ -1,4 +1,4 @@
-package qeaca.test_unit;
+package aca;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
