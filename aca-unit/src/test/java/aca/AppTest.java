@@ -1,6 +1,11 @@
+
+
 package aca;
 
 import org.junit.Test;
+
+import junit.framework.Assert;
+
 import static org.junit.Assert.*;
 /**
  * Unit test for simple App.
@@ -9,6 +14,18 @@ public class AppTest
     {
 	
 	App app = new App();
+	
+	
+	
+	@Test
+	public void testDivZer() {
+		Assert.assertEquals(app.div(2, 0), 0);
+	}
+	
+	@Test
+	public void testDiv() {
+		Assert.assertEquals(app.div(2, 1), 2);
+	}
 	
 	  @Test
 	    public void testConcatenate() {

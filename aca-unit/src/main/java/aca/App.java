@@ -11,4 +11,11 @@ public class App {
 		String d = c.toString();;
 		return d;
 	}
+	
+	public int div(int a, int b) {
+		if(b==0) {
+			return 0;
+		}
+		return a/b;
+	}
 }
